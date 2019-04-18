@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Books</title>
+    <link href={{url_for('static', filename='styles.css')}} rel="stylesheet">
+</head>
+<body>
+    <ul id="books">
+    {% for book, value in books.items() %}
+    	<li>
+			<div class="card">
+				<img src={{value[1]}} style="width: 50px; height: 75px; float: left">
+				<h3 class="card__title">{{book}}</h2>
+				<h4 class="card__desc">{{value[0]}}</h5>
+			</div>
+		</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
